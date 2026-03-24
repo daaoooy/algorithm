@@ -23,24 +23,22 @@ function f(n) {
     if (i % 3 === 0 && i % 2 === 0) {
       divide2Case = dp[i / 2];
       divide3Case = dp[i / 3];
+      subtraction1Case = dp[i - 1];
 
-      dp[i] = divide3Case >= divide2Case ? 1 + divide2Case : 1 + divide3Case;
+      dp[i] = 1 + Math.min(divide2Case, divide3Case, subtraction1Case);
     } else if (i % 3 === 0) {
       divide3Case = dp[i / 3];
       subtraction1Case = dp[i - 1];
-      dp[i] =
-        divide3Case >= subtraction1Case
-          ? 1 + subtraction1Case
-          : 1 + divide3Case;
+
+      dp[i] = 1 + Math.min(divide3Case, subtraction1Case);
     } else if (i % 2 === 0) {
       divide2Case = dp[i / 2];
       subtraction1Case = dp[i - 1];
-      dp[i] =
-        divide2Case >= subtraction1Case
-          ? 1 + subtraction1Case
-          : 1 + divide2Case;
+
+      dp[i] = 1 + Math.min(divide2Case, subtraction1Case);
     } else {
       subtraction1Case = dp[i - 1];
+
       dp[i] = 1 + subtraction1Case;
     }
   }
