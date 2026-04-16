@@ -5,5 +5,7 @@
 
 <br/>
 <br/>
-  
+
+> 🥲 **2026-04-16 commit 많은 이유..**: 백준 서비스 종료로 인해 예전에 풀었던 문제 옮김..
+
 > This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
